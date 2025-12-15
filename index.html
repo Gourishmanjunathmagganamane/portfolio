@@ -113,6 +113,7 @@
             white-space: pre-wrap;
             margin-bottom: 10px;
             flex-grow: 0;
+            word-wrap: break-word; 
         }
 
         .input-line {
@@ -144,6 +145,7 @@
             outline: none;
             padding: 0;
             margin: 0;
+            caret-color: var(--text-color);
         }
 
         /* --- TEXT STYLING --- */
@@ -187,8 +189,8 @@
             border: 2px solid var(--prompt-color);
             object-fit: cover;
             margin-bottom: 15px;
-            /* Optional: Grayscale for retro feel */
-            filter: grayscale(100%) contrast(1.2); 
+            /* grayscale filter removed so your color photo shows correctly */
+            /* filter: grayscale(100%) contrast(1.2); */ 
         }
 
         .resume-link {
@@ -273,7 +275,7 @@
         </div>
     </div>
 
-    <div class="terminal" id="terminal-container" onclick="document.getElementById('command-input').focus()">
+    <div class="terminal" id="terminal-container">
         <div id="output"></div>
         
         <div class="input-line">
@@ -286,7 +288,7 @@
     // --- CONTENT DATA ---
     const contentData = {
         'about': `
-<img src="image.png" class="profile-pic" alt="Gourish Profile Photo" onerror="this.style.display='none'">
+<img src="image.png" class="profile-pic" alt="Gourish Profile Photo" onerror="this.src='https://ui-avatars.com/api/?name=Gourish+M&background=39ff14&color=000&size=128'">
 <br>
 <span class="section-header">PROFILE</span>
 Name:        Gourish Manjunath Magganamane
@@ -396,6 +398,10 @@ Kristu Jayanti College, Bengaluru
         handleCommand();
         inputField.focus();
     }
+    
+    function scrollToBottom() {
+        terminalContainer.scrollTop = terminalContainer.scrollHeight;
+    }
 
     function handleCommand() {
         const rawInput = inputField.value;
@@ -431,7 +437,7 @@ Kristu Jayanti College, Bengaluru
              printOutput(new Date().toString());
         }
         else if (cmd === 'whoami') {
-             printOutput("visitor");
+             printOutput(isRoot ? "root" : "visitor");
         }
         else if (cmd === 'pwd') {
              printOutput("/home/gourish/portfolio");
@@ -469,10 +475,15 @@ Kristu Jayanti College, Bengaluru
 
         // 4. Reset Input & Scroll
         inputField.value = '';
-        terminalContainer.scrollTop = terminalContainer.scrollHeight;
+        setTimeout(scrollToBottom, 10);
     }
 
     // --- EVENT LISTENERS ---
+    
+    // Focus input when clicking anywhere in terminal
+    terminalContainer.addEventListener('click', function(){
+        inputField.focus();
+    });
 
     inputField.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') {
@@ -501,7 +512,7 @@ Kristu Jayanti College, Bengaluru
         else if (e.key === 'Tab') {
             e.preventDefault();
             const currentVal = inputField.value;
-            const validCommands = Object.keys(contentData).concat(['clear', 'ls', 'enable', 'whoami', 'date']);
+            const validCommands = Object.keys(contentData).concat(['clear', 'ls', 'enable', 'whoami', 'date', 'help']);
             
             const match = validCommands.find(c => c.startsWith(currentVal));
             if (match) {
