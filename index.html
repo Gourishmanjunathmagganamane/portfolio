@@ -179,6 +179,36 @@
             font-weight: bold;
         }
 
+        /* --- PROFILE PHOTO & RESUME STYLE --- */
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 2px solid var(--prompt-color);
+            object-fit: cover;
+            margin-bottom: 15px;
+            /* Optional: Grayscale for retro feel */
+            filter: grayscale(100%) contrast(1.2); 
+        }
+
+        .resume-link {
+            display: inline-block;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: #0d1117;
+            background: var(--prompt-color);
+            padding: 6px 12px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 2px;
+            border: none;
+        }
+        .resume-link:hover {
+            background: #fff;
+            color: #000;
+            cursor: pointer;
+        }
+
         /* Scrollbar Styling */
         ::-webkit-scrollbar {
             width: 10px;
@@ -208,7 +238,7 @@
         <ul class="cmd-list">
             <li class="cmd-item">
                 <span class="cmd-name" onclick="runFromSidebar('about')">about</span>
-                <span class="cmd-desc">Profile, Contact & Summary</span>
+                <span class="cmd-desc">Profile, Photo & Resume</span>
             </li>
             <li class="cmd-item">
                 <span class="cmd-name" onclick="runFromSidebar('skills')">skills</span>
@@ -256,10 +286,14 @@
     // --- CONTENT DATA ---
     const contentData = {
         'about': `
+<img src="image.png" class="profile-pic" alt="Gourish Profile Photo" onerror="this.style.display='none'">
+<br>
 <span class="section-header">PROFILE</span>
 Name:        Gourish Manjunath Magganamane
 Role:        Aspiring Network Engineer
 Location:    Bangalore, India
+
+<a href="resume.pdf" target="_blank" class="resume-link">⬇ DOWNLOAD RESUME (PDF)</a>
 
 <span class="section-header">CONTACT INFO</span>
 Email:       <a href="mailto:gourishmagganmane@gmail.com">gourishmagganmane@gmail.com</a>
