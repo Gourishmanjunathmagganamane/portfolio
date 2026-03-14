@@ -1,0 +1,88 @@
+:root {
+    --bg: #0b0e14;
+    --surface: #151921;
+    --border: #262c36;
+    --accent: #00f2ff;
+    --accent-dim: rgba(0, 242, 255, 0.15);
+    --text-main: #e6edf3;
+    --text-dim: #8b949e;
+    --sidebar-width: 260px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text-main); font-family: 'Inter', sans-serif; display: flex; }
+
+/* Sidebar */
+.sidebar { width: var(--sidebar-width); height: 100vh; background: var(--surface); border-right: 1px solid var(--border); position: fixed; padding: 50px 30px; z-index: 100; }
+.nav-brand { font-size: 1.6rem; font-weight: 800; margin-bottom: 60px; color: var(--accent); }
+.nav-brand span { color: #fff; }
+.nav-links { list-style: none; padding: 0; }
+.nav-links li { margin-bottom: 25px; }
+.nav-links a { text-decoration: none; color: var(--text-dim); font-size: 0.95rem; font-family: 'Fira Code', monospace; transition: 0.3s; }
+.nav-links a:hover { color: var(--accent); padding-left: 5px; }
+
+/* Main Content */
+.content { margin-left: var(--sidebar-width); padding: 80px 10%; width: calc(100% - var(--sidebar-width)); }
+.section { margin-bottom: 120px; max-width: 1000px; }
+.section-title { border-left: 4px solid var(--accent); padding-left: 15px; font-size: 1.8rem; margin-bottom: 40px; }
+
+/* Professional Timeline */
+.timeline-container { display: flex; flex-direction: column; gap: 20px; border-left: 2px solid var(--border); padding-left: 30px; margin-left: 10px; }
+.timeline-item { position: relative; background: var(--surface); padding: 25px; border-radius: 8px; border: 1px solid var(--border); }
+.timeline-item::before { content: ''; position: absolute; left: -41px; top: 25px; width: 16px; height: 16px; background: var(--bg); border: 3px solid var(--accent); border-radius: 50%; }
+.timeline-item h4 { margin: 0 0 5px 0; color: var(--accent); }
+.timeline-item .date { font-size: 0.85rem; color: var(--text-dim); font-family: 'Fira Code', monospace; }
+
+/* Interactive Horizontal Tree */
+#interactive-tree { width: 100%; height: 500px; background: transparent; border: 1px solid var(--border); border-radius: 8px; margin-top: 20px; overflow: hidden; }
+.node rect { fill: var(--surface); stroke: var(--border); stroke-width: 2px; transition: 0.3s; cursor: pointer; }
+.node text { fill: var(--text-dim); font-family: 'Fira Code', monospace; font-size: 11px; pointer-events: none; transition: 0.3s; }
+.link { fill: none; stroke: #30363d; stroke-width: 1.5px; transition: 0.5s; }
+
+.node-active rect { stroke: var(--accent); fill: var(--accent-dim); }
+.node-active text { fill: #fff; font-weight: bold; }
+.link-active { stroke: var(--accent); stroke-width: 2.5px; }
+
+/* Skills Matrix */
+.skills-pill-container { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.skill-pill { 
+    background: var(--surface); border: 1px solid var(--accent-dim); color: var(--accent); 
+    padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; font-family: 'Fira Code', monospace; 
+    box-shadow: inset 0 0 10px rgba(0, 242, 255, 0.05);
+}
+
+/* Projects & Certs Cards */
+.project-grid, .certs-container { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.project-card, .cert-item { background: var(--surface); border: 1px solid var(--border); padding: 25px; border-radius: 8px; transition: 0.3s; }
+.project-card:hover, .cert-item:hover { border-color: var(--accent); transform: translateY(-5px); }
+.tags span { font-size: 0.7rem; background: var(--border); padding: 4px 8px; border-radius: 4px; margin-right: 8px; color: var(--accent); font-family: 'Fira Code', monospace; }
+
+.card-btn {
+    display: inline-block; margin-top: 15px; padding: 10px 18px; 
+    background: var(--accent-dim); border: 1px solid var(--accent); color: var(--accent); 
+    text-decoration: none; font-size: 0.8rem; font-weight: bold; border-radius: 4px; transition: 0.3s;
+}
+.card-btn:hover { background: var(--accent); color: var(--bg); }
+
+/* Contact Box */
+.contact-box {
+    display: none; margin-top: 25px; padding: 25px; background: var(--surface); 
+    border: 1px solid var(--accent); border-radius: 8px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; animation: fadeIn 0.4s ease;
+}
+.contact-item .label { display: block; font-size: 0.7rem; color: var(--accent); font-family: 'Fira Code', monospace; margin-bottom: 5px; }
+.contact-link { color: var(--text-main); text-decoration: none; font-weight: 500; }
+.contact-link:hover { color: var(--accent); }
+
+/* Buttons & Modals */
+.btn { padding: 14px 28px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: 0.3s; display: inline-block; border: none; }
+.btn.primary { background: var(--accent); color: var(--bg); margin-right: 20px; }
+.btn.secondary { border: 1px solid var(--border); color: var(--text-main); background: transparent; text-decoration: none; }
+
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(5, 7, 10, 0.95); backdrop-filter: blur(8px); }
+.modal-content { position: relative; margin: auto; top: 50%; transform: translateY(-50%); width: 80%; max-width: 900px; }
+#modal-pdf, #modal-img { width: 100%; height: 80vh; border-radius: 8px; display: none; border: none; }
+.close-modal { position: absolute; top: -50px; right: 0; color: var(--accent); font-size: 40px; cursor: pointer; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
