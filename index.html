@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gourish.db | Data Engineer Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
     <nav class="sidebar">
@@ -23,16 +27,32 @@
 
     <main class="content">
         <header id="home" class="section">
-            <div class="badge">Eager to Contribute & Innovate</div>
-            <h1>Gourish Manjunath</h1>
+            <div class="badge" style="
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 7px;
+    border: 1.5px solid rgba(74, 93, 216, 0.6);
+    background-color: rgba(74, 93, 216, 0.1);
+    color: rgb(74, 93, 216);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+">
+                Eager to Contribute & Innovate
+            </div>
+            <h1 style="font-size: 50px; margin-bottom: 0; padding: 0; color:#37496d;">Gourish Manjunath</h1>
+            <h1 style="font-size: 50px; margin-top: 0; padding: 0;color:#37496d;">Magganamane</h1>
             <h2 class="headline">Data Engineer & Cloud Specialist</h2>
             <p class="summary">
                 MCA student at Kristu Jayanti University with an unwavering commitment to technical excellence.
                 Naturally driven to master technologies and deliver loyal, high-impact results.
             </p>
             <div class="cta-group">
-                <button onclick="toggleContact()" class="btn primary" id="contactBtn">▶ Enthusiastic to Connect</button>
-                <a href="https://github.com/Gourishmanjunathmagganamane" target="_blank" class="btn secondary">GitHub Profile</a>
+                <button onclick="toggleContact()" class="btn primary" id="contactBtn" style="margin-bottom: 17px;">▶ Enthusiastic to Connect</button>
+                <a href="https://github.com/Gourishmanjunathmagganamane" target="_blank" class="btn secondary">GitHub
+                    Profile</a>
             </div>
 
             <div id="contactDetails" class="contact-box">
@@ -46,7 +66,8 @@
                 </div>
                 <div class="contact-item">
                     <span class="label">LinkedIn</span>
-                    <a href="https://www.linkedin.com/in/gourish-manjunath-magganamane-225a69255/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BrtsRRV53QdipEAFP1e5SNg%3D%3D" target="_blank" class="contact-link">gourish-manjunath</a>
+                    <a href="https://www.linkedin.com/in/gourish-manjunath-magganamane-225a69255/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BrtsRRV53QdipEAFP1e5SNg%3D%3D"
+                        target="_blank" class="contact-link">gourish-manjunath</a>
                 </div>
             </div>
         </header>
@@ -83,7 +104,7 @@
                 <h3 class="section-title">Mapped Projects</h3>
                 <div id="project-display" class="project-grid"></div>
             </section>
-         
+
             <section id="certs" class="section">
                 <h3 class="section-title">Verified Credentials</h3>
                 <div id="cert-display" class="certs-container"></div>
@@ -105,4 +126,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
