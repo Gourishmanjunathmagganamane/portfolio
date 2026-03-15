@@ -7,29 +7,37 @@
     <title>Gourish.db | Data Engineer Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-bundle@2/tsparticles.bundle.min.js"></script>
 </head>
 
 <body>
 
-    <nav class="sidebar">
-        <div class="nav-brand">GOURISH</div>
-        <ul class="nav-links">
-            <li><a href="#home">Summary</a></li>
-            <li><a href="#experience">Timeline</a></li>
-            <li><a href="#tree-section">Architecture</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certs">Certs</a></li>
-        </ul>
+    <!-- Wow Factor Overlays -->
+    <div id="tsparticles"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-brand">Gourish.</div>
+            <ul class="nav-links">
+                <li><a href="#home">Summary</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#tree-section">Architecture</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certs">Certs</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main class="content">
-        <header id="home" class="section" style="display: flex; align-items: center; justify-content: space-between; gap: 40px; padding-top: 40px;">
-    
-    <div class="header-text-content" style="flex: 1;">
-        <div class="badge" style="
+        <header id="home" class="section"
+            style="display: flex; justify-content: space-between; gap: 40px; padding-top: 40px;">
+
+            <div class="header-text-content" style="flex: 1;">
+                <div class="badge" style="
             display: inline-block;
             padding: 6px 16px;
             border-radius: 7px;
@@ -43,42 +51,51 @@
             font-family: 'JetBrains Mono', monospace;
             margin-bottom: 15px;
         ">
-            Eager to Contribute & Innovate
-        </div>
+                    Eager to Contribute & Innovate
+                </div>
 
-        <h1 style="font-size: 50px; margin-bottom: 0; padding: 0; color:#37496d; line-height: 1.1;">Gourish Manjunath</h1>
-        <h1 style="font-size: 50px; margin-top: 0; padding: 0; color:#37496d; line-height: 1.1;">Magganamane</h1>
-        
-        <h2 class="headline" style="margin-top: 10px;">Data Engineer & Cloud Specialist</h2>
-        
-        <p class="summary" style="max-width: 500px;">
-            MCA student at Kristu Jayanti University with an unwavering commitment to technical excellence.
-            Naturally driven to master technologies and deliver loyal, high-impact results.
-        </p>
+                <h1 style="font-size: 56px; margin-bottom: 0; padding: 0; line-height: 1.05;">Gourish Manjunath</h1>
+                <h1 style="font-size: 56px; margin-top: 0; padding: 0; line-height: 1.05;">Magganamane.</h1>
 
-        <div class="cta-group">
-            <button onclick="toggleContact()" class="btn primary" id="contactBtn" style="margin-bottom: 17px;">▶ Enthusiastic to Connect</button>
-            <a href="https://github.com/Gourishmanjunathmagganamane" target="_blank" class="btn secondary">GitHub Profile</a>
-        </div>
+                <h2 class="headline"
+                    style="margin-top: 15px; font-weight: 500; font-size: 1.5rem; color: var(--text-dim); letter-spacing: -0.02em; min-height: 36px; display: flex; align-items: center;">
+                    <span id="typewriter-text"></span><span class="typing-cursor">|</span>
+                </h2>
 
-        <div id="contactDetails" class="contact-box">
-            <div class="contact-item">
-                <span class="label">Email</span>
-                <a href="mailto:gourishmagganmane@gmail.com" class="contact-link">gourishmagganmane@gmail.com</a>
+                <p class="summary"
+                    style="max-width: 650px; font-size: 1.1rem; line-height: 1.6; color: var(--text-dim); margin-bottom: 30px;">
+                    MCA student with strong foundations in cloud computing, databases, and data engineering. Hands-on
+                    experience with PostgreSQL, SQL optimization, ETL pipelines, and BI dashboards. Familiar with AWS
+                    cloud services and infrastructure concepts. Seeking entry-level opportunities in Cloud Engineering,
+                    Data Engineering, or Data Analytics.
+                </p>
+
+                <div class="cta-group">
+                    <button onclick="toggleContact()" class="btn primary" id="contactBtn">Contact Me</button>
+                    <a href="https://github.com/Gourishmanjunathmagganamane" target="_blank"
+                        class="btn secondary">GitHub Profile &nearr;</a>
+                </div>
+
+                <div id="contactDetails" class="contact-box">
+                    <div class="contact-item">
+                        <span class="label">Email</span>
+                        <a href="mailto:gourishmagganmane@gmail.com"
+                            class="contact-link">gourishmagganmane@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="label">Phone</span>
+                        <a href="tel:+917892047229" class="contact-link">+91 7892047229</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="label">LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/gourish-manjunath-magganamane-225a69255/" target="_blank"
+                            class="contact-link">gourish-m</a>
+                    </div>
+                </div>
             </div>
-            <div class="contact-item">
-                <span class="label">Phone</span>
-                <a href="tel:+917892047229" class="contact-link">+91 7892047229</a>
-            </div>
-            <div class="contact-item">
-                <span class="label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/gourish-manjunath-magganamane-225a69255/" target="_blank" class="contact-link">gourish-manjunath</a>
-            </div>
-        </div>
-    </div>
 
-    <div class="header-visual" style="flex: 0 0 auto;">
-        <img src="without backround.png" alt="Gourish Digital Voxel" style="
+            <div class="header-visual" style="flex: 0 0 auto;">
+                <img src="without backround.png" alt="Gourish Digital Voxel" class="floating-avatar" style="
             width: 380px; 
             height: auto; 
             border-radius: 20px;
@@ -86,23 +103,73 @@
             mask-image: linear-gradient(to right, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
             -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
         ">
-    </div>
+            </div>
 
-</header>
+        </header>
 
         <section id="experience" class="section">
-            <h3 class="section-title">Professional Timeline</h3>
+            <h3 class="section-title">Professional Experience</h3>
             <div class="timeline-container">
                 <div class="timeline-item">
-                    <h4>Student Intern @ SocialBytes</h4>
+                    <h4>Student Intern @ SocialBytes, Bengaluru</h4>
                     <span class="date">Jan 2026 - Present</span>
-                    <p>Developing AI-driven data solutions and system architectures.</p>
+                    <ul class="resume-list">
+                        <li>Managed PostgreSQL databases using psql and pgAdmin for schema exploration and query
+                            execution.</li>
+                        <li>Developed advanced SQL queries using JOINs, GROUP BY, HAVING, subqueries, and window
+                            functions.</li>
+                        <li>Performed data cleaning, transformation, and CSV import/export operations.</li>
+                        <li>Built ETL pipelines transferring PostgreSQL data to Google Sheets.</li>
+                        <li>Created BI dashboards using Looker Studio to convert datasets into insights.</li>
+                    </ul>
                 </div>
                 <div class="timeline-item">
-                    <h4>Cloud Support Intern @ Hostup Cloud Tech</h4>
+                    <h4>Cloud Support Engineer Intern @ Hostup Cloud Technologies Pvt Ltd</h4>
                     <span class="date">May 2023 - July 2023</span>
-                    <p>Managed cloud infrastructure and technical support protocols.</p>
+                    <ul class="resume-list">
+                        <li>Learned cloud computing fundamentals including IaaS, PaaS, SaaS and deployment models.</li>
+                        <li>Studied networking basics including OSI model, IP addressing, subnetting, DNS, DHCP and
+                            routing.</li>
+                        <li>Assisted customers with first-level technical support tasks such as password resets and
+                            troubleshooting.</li>
+                        <li>Gained exposure to hosting infrastructure and cloud service operations.</li>
+                    </ul>
                 </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+
+                <!-- Education Column -->
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 class="section-title" style="text-align: left;">Education</h3>
+                    <div class="timeline-container">
+                        <div class="timeline-item">
+                            <h4>Master of Computer Applications (MCA)</h4>
+                            <span class="date">2024 - 2026 | Kristu Jayanti University, Bengaluru</span>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Bachelor of Computer Applications (Analytics)</h4>
+                            <span class="date">2021 - 2024 | Kristu Jayanti University</span>
+                            <p style="margin-top: 5px; color: var(--text-main); font-weight: 500;">CGPA: 8.5</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements Column -->
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 class="section-title" style="text-align: left;">Leadership & Achievements</h3>
+                    <div class="project-card" style="height: 100%;">
+                        <ul class="resume-list achievment-list" style="margin: 0; padding-left: 20px;">
+                            <li><strong>Class Representative</strong> – MCA</li>
+                            <li><strong>Overall Champion</strong> – Manoeuvre 2.0 (National Science Day 2025)</li>
+                            <li><strong>1st Place</strong> – Coding and Debugging Competition</li>
+                            <li>Conducted SQL knowledge-sharing session for MCA students</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </section>
 
