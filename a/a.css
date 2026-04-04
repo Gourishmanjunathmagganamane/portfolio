@@ -1,0 +1,95 @@
+/* ===== LIGHT THEME (Default) ===== */
+:root {
+    --th-bg: #1e3a5f;         /* deep navy header (matches dark theme for consistency) */
+    --th-text: #ffffff;       /* white text on header */
+
+    --row-odd: #ffffff;       /* clean white backgrounds to match charts */
+    --row-even: #f8fafc;      /* very slight off-white for contrast */
+
+    --summary-bg: #e2e8f0;    /* gentle gray for the summary row */
+    --text-color: #334155;    /* dark slate gray text (very readable) */
+
+    --border-color: #e2e8f0;  /* soft, clean gray border */
+    --hover-bg: #f1f5f9;      /* subtle hover effect */
+}
+
+/* ===== DARK THEME ===== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --th-bg: #0f172a;         /* darker navy/slate for dark mode */
+        --th-text: #f8fafc;       /* off-white text */
+
+        --row-odd: #1e293b;       /* slate */
+        --row-even: #0f172a;      /* darker slate */
+
+        --summary-bg: #020617;    /* near black highlight */
+        --text-color: #e2e8f0;    /* light text color */
+
+        --border-color: rgba(255, 255, 255, 0.08); /* faint border */
+        --hover-bg: rgba(59, 130, 246, 0.15);      /* subtle blue hover */
+    }
+}
+
+/* ===== OPTIONAL: Explicit Dark Mode Class ===== */
+/* If your dashboard uses a class on the body to toggle themes, this catches it! */
+.dark, [data-theme="dark"] {
+    --th-bg: #0f172a;
+    --th-text: #f8fafc;
+    --row-odd: #1e293b;
+    --row-even: #0f172a;
+    --summary-bg: #020617;
+    --text-color: #e2e8f0;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --hover-bg: rgba(59, 130, 246, 0.15);
+}
+
+/* ===== HEADER ===== */
+thead th{
+    background: var(--th-bg) !important;
+    color: var(--th-text) !important;
+    text-align: center !important;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    padding: 10px 12px;
+}
+
+/* ===== ROWS ===== */
+tbody tr:nth-child(odd){
+    background: var(--row-odd) !important;
+    color: var(--text-color) !important;
+}
+
+tbody tr:nth-child(even){
+    background: var(--row-even) !important;
+    color: var(--text-color) !important;
+}
+
+/* ===== SUMMARY ROW ===== */
+tbody tr:last-child{
+    background: var(--summary-bg) !important;
+    font-weight: 700;
+    color: var(--text-color) !important;
+}
+
+/* Make sure text color applies correctly to all td elements */
+tbody td, tbody tr:last-child td {
+    color: var(--text-color) !important;
+    text-align: center; /* better alignment for dashboard numbers */
+    padding: 8px 12px;
+}
+
+/* ===== HOVER EFFECT ===== */
+tbody tr:hover{
+    background: var(--hover-bg) !important;
+    transition: background 0.2s ease-in-out;
+}
+
+/* ===== BORDER ===== */
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td{
+    border: 1px solid var(--border-color) !important;
+}

@@ -6,59 +6,60 @@
 // 1. DATA STRUCTURE
 const systemArchitecture = {
     name: "Gourish.db",
-    skills: ["Python", "SQL Optimization", "ETL Pipelines", "Data Cleaning"],
+    skills: ["Python", "JavaScript", "PL/SQL", "Django"],
     children: [
         {
-            name: "Cloud & Networking",
-            skills: ["AWS (EC2, S3, IAM)", "VPC Design", "Subnetting", "Cisco Packet Tracer"],
+            name: "Cloud & Infrastructure",
+            skills: ["AWS", "WSL2 Ubuntu", "Docker", "Git/GitHub"],
             projects: ["Creating CI/CD Pipeline for a Website (PHP, SQL)", "AWS Networking Deep Dive"],
             certs: ["4-week course on AWS Cloud Practitioner Certification - Self Paced", "AI Anomaly Detection in Cloud"],
             children: [
                 { 
-                    name: "Advanced Networking Lab", 
-                    skills: ["OSI Model", "IP Addressing", "Router/Switch Config", "VPC Peering", "VPN vs Direct Connect"], 
+                    name: "Networking", 
+                    skills: ["OSI Model", "IP Addressing", "Subnetting", "DNS/DHCP", "Routing"], 
                     projects: ["CCNA Lab Topologies"],
                     certs: []
                 },
                 { 
-                    name: "Cloud Knowledge", 
-                    skills: ["Hosting Infrastructure", "CI/CD Pipeline Design", "IaaS/PaaS/SaaS"], 
-                    certs: ["4-week course on AWS Cloud Practitioner Certification - Self Paced"] 
+                    name: "Auth & Security", 
+                    skills: ["Google OAuth 2.0", "JWT", "Session Management", "Role-Based Access"], 
+                    projects: ["Django-Superset Analytics Platform"],
+                    certs: [] 
                 }
             ]
         },
         {
-            name: "Databases & Vectors",
-            skills: ["PostgreSQL", "MySQL", "psql", "pgAdmin", "Schema Exploration"],
+            name: "Databases & Data Eng",
+            skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
             projects: ["Local Jarvis AI", "Smart Scrap Management System"],
             certs: ["SQL(Basic)", "Introduction to MongoDB"],
             children: [
                 { 
                     name: "SQL Mastery", 
-                    skills: ["JOINs", "Window Functions", "GROUP BY/HAVING", "CRUD Operations"], 
+                    skills: ["Window Functions", "CTEs", "Stored Procedures", "Data Modeling"], 
                     projects: ["Smart Scrap Management System"] 
                 },
                 { 
-                    name: "NoSQL / Vectors", 
-                    skills: ["MongoDB", "ChromaDB", "Vector Search", "RAG Pipeline"], 
-                    projects: ["Local Jarvis AI"] 
+                    name: "ETL & Pipelines", 
+                    skills: ["ETL Pipelines", "SQL Optimization", "Data Transformation"], 
+                    projects: ["Django-Superset Analytics Platform"] 
                 }
             ]
         },
         {
-            name: "AI & Data Visualization",
-            skills: ["Looker Studio", "Apache Superset", "Power BI", "Google Sheets"],
+            name: "Frameworks & Visualization",
+            skills: ["Django REST Framework", "Apache Superset 6.0", "Looker Studio"],
             projects: ["Local Jarvis AI", "Automated Timetable Generator"],
             certs: ["Generative AI Mastermind", "Qlik Sense Business Analyst Qualification 2023"],
             children: [
                 { 
-                    name: "GenAI / RAG", 
-                    skills: ["Ollama", "LangChain", "Genetic Algorithms"], 
-                    projects: ["Local Jarvis AI", "Automated Timetable Generator"] 
+                    name: "Web Platforms", 
+                    skills: ["Dashboard Embedding", "Full Stack Dev", "MVC Architecture"], 
+                    projects: ["Smart Scrap Management System", "Django-Superset Analytics Platform"] 
                 },
                 { 
-                    name: "BI & Visualization", 
-                    skills: ["Dashboard Design", "Data Transformation", "Data Insights"], 
+                    name: "BI Dashboards", 
+                    skills: ["Power BI", "Tableau", "Data Insights"], 
                     certs: ["Qlik Sense Business Analyst Qualification 2023"] 
                 }
             ]
@@ -68,6 +69,12 @@ const systemArchitecture = {
 
 const allData = {
     projects: [
+        { 
+            id: "Django-Superset Analytics Platform", 
+            goal: "Architected a full-stack platform embedding Apache Superset 6.0 within Django. Resolved a critical Superset persistence bug by implementing custom serialization logic. Integrated Google OAuth 2.0 with session management and RBAC. Configured WSL2, Docker, PostgreSQL, and Redis for seamless cross-platform workflow.", 
+            tags: ["Django", "Apache Superset", "OAuth 2.0", "PostgreSQL", "Docker", "Redis"], 
+            link: "https://github.com/Gourishmanjunathmagganamane/my_superset/tree/main/django/hello" 
+        },
         { 
             id: "Local Jarvis AI", 
             goal: "Nov 2025 – Nov 2025 | Associated with Kristu Jayanti College Autonomous.<br><br>Local Jarvis AI is an offline RAG-based assistant that can read your PDFs, learn from them, and answer questions instantly. All processing happens locally using Ollama, LangChain, and ChromaDB — keeping your data private and secure.", 
@@ -234,8 +241,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (twText) {
         const phrases = [
             "Data Engineer", 
-            "Cloud Analytics Specialist", 
-            "Problem Solver",
+            "Full Stack Developer", 
+            "Cloud & Database Specialist",
             "Lifelong Learner"
         ];
         let pIdx = 0;

@@ -1,0 +1,52 @@
+/* ===== THEME VARIABLES ===== */
+:root  {
+    --th-bg: #1e3a5f;         /* deep navy */
+    --th-text: #ffffff;
+
+    --row-odd: #1e293b;       /* slate */
+    --row-even: #0f172a;      /* darker slate */
+
+    --summary-bg: #020617;    /* near black highlight */
+    --text-color: #e2e8f0;
+
+    --border-color: rgba(255,255,255,0.12);
+}
+
+/* ===== HEADER ===== */
+thead th{
+    background: var(--th-bg) !important;
+    color: var(--th-text) !important;
+    text-align: center !important;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+/* ===== ROWS ===== */
+tbody tr:nth-child(odd){
+    background: var(--row-odd) !important;
+    color: var(--text-color) !important;
+}
+
+tbody tr:nth-child(even){
+    background: var(--row-even) !important;
+    color: var(--text-color) !important;
+}
+
+/* ===== SUMMARY ROW ===== */
+tbody tr:last-child{
+    background: var(--summary-bg) !important;
+    font-weight: 700;
+    color: var(--text-color) !important;
+}
+
+/* ===== HOVER EFFECT ===== */
+tbody tr:hover{
+    background: rgba(59,130,246,0.15) !important; /* subtle blue hover */
+}
+
+/* ===== BORDER ===== */
+table, th, td{
+    border: 1px solid var(--border-color) !important;
+    border-collapse: collapse;
+    padding: 8px;
+}
