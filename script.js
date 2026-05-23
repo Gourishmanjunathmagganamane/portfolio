@@ -109,7 +109,19 @@ const allData = {
             goal: "Built a two-machine home lab (Ubuntu defender + Kali Linux attacker) to simulate real SSH brute force attacks and analyse them using a locally hosted AI model. Wrote a Python script that reads live auth.log entries, applies a custom SOC playbook with detection rules, and sends logs to TinyLLaMA via Ollama — returning structured incident reports with threat type, attacker IP, attempt count, and recommended actions. Runs fully offline with no API cost. Built with AI assistance — understood and debugged every part.",
             tags: ["Python", "Ollama", "Kali Linux", "Hydra", "Linux", "SSH"],
             link: "javascript:void(0)",
-            color: "#ff453a"
+            color: "#ff453a",
+            gallery: [
+                "immages for soc project/0.png",
+                "immages for soc project/1.png",
+                "immages for soc project/2.png",
+                "immages for soc project/3.png",
+                "immages for soc project/4.png",
+                "immages for soc project/5.png",
+                "immages for soc project/6.png",
+                "immages for soc project/7.png",
+                "immages for soc project/Screenshot 2026-05-21 112006.png",
+                "immages for soc project/Screenshot 2026-05-21 112021.png"
+            ]
         },
         {
             id: "Django-Superset Analytics Platform",
@@ -404,9 +416,11 @@ function renderDisplay(containerId, data, type) {
         `<span ${item.color ? `style="color:${item.color}; background:rgba(255,255,255,0.05);"` : ''}>${t}</span>`
     ).join('')}</div>` : ''}
             ${type === 'cert'
-            ? `<button onclick="openCert('${item.link}')" class="card-btn" style="border:none; cursor:pointer; ${item.color ? `background:${item.color};` : ''}">View Credential</button>`
-            : `<a href="${item.link}" target="_blank" class="card-btn" ${item.color ? `style="background:${item.color};"` : ''}>View Repository</a>`
-        }
+                ? `<button onclick="openCert('${item.link}')" class="card-btn" style="border:none; cursor:pointer; ${item.color ? `background:${item.color};` : ''}">View Credential</button>`
+                : (item.gallery 
+                    ? `<button onclick="openGallery('${item.id}')" class="card-btn" style="border:none; cursor:pointer; ${item.color ? `background:${item.color};` : ''}">View Project Gallery</button>`
+                    : `<a href="${item.link}" target="_blank" class="card-btn" ${item.color ? `style="background:${item.color};"` : ''}>View Repository</a>`)
+            }
         </div>
     `).join('');
 
@@ -466,9 +480,27 @@ function closeCert() {
     modal.style.display = 'none';
 }
 
+function openGallery(projectId) {
+    const project = allData.projects.find(p => p.id === projectId);
+    if (!project || !project.gallery) return;
+
+    document.getElementById('gallery-title').innerText = project.id + " - Gallery";
+    const container = document.getElementById('gallery-images');
+    container.innerHTML = project.gallery.map(img => `<img src="${img}" style="width:100%; border-radius:10px; border:1px solid rgba(255,255,255,0.1);" alt="Project Screenshot">`).join('');
+    
+    document.getElementById('gallery-modal').style.display = 'block';
+}
+
+function closeGallery() {
+    document.getElementById('gallery-modal').style.display = 'none';
+    document.getElementById('gallery-images').innerHTML = '';
+}
+
 window.onclick = function (event) {
-    const modal = document.getElementById('cert-modal');
-    if (event.target === modal) closeCert();
+    const certModal = document.getElementById('cert-modal');
+    const galleryModal = document.getElementById('gallery-modal');
+    if (event.target === certModal) closeCert();
+    if (event.target === galleryModal) closeGallery();
 };
 
 // ─── 8. INITIAL RENDER ───────────────────────────────────────────────────────
