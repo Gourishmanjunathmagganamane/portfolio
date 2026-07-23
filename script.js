@@ -72,28 +72,28 @@ const systemArchitecture = {
             name: "Cybersecurity",
             skills: ["Log Analysis", "Linux CLI", "CIA Triad", "Kali Linux", "Network Security", "SOC"],
             projects: ["AI-Powered SOC Analyst Agent"],
-            certs: ["TryHackMe Pre Security", "Cybersecurity Essentials — Cisco"],
+            certs: ["TryHackMe Pre Security", "Cybersecurity Essentials — Cisco", "Cyber Security 101"],
             children: [
                 {
                     name: "SOC & Log Analysis",
                     skills: ["Log Analysis", "Incident Response", "SOC Playbooks", "Auth.log Analysis", "Brute Force Detection", "AI-Assisted Log Analysis"],
                     projects: ["AI-Powered SOC Analyst Agent"],
-                    certs: ["TryHackMe Pre Security", "Cybersecurity Essentials — Cisco"]
+                    certs: ["TryHackMe Pre Security", "Cybersecurity Essentials — Cisco", "Cyber Security 101"]
                 },
                 {
                     name: "Linux & Networking",
                     skills: ["Linux CLI", "SSH", "File Permissions", "rsyslog", "systemctl", "OSI Model", "TCP/IP", "DNS", "HTTP/HTTPS", "Packets & Frames", "Wireshark", "Tcpdump", "Nmap (Learning)"]
-                    , certs: ["TryHackMe Pre Security", "Cybersecurity Essentials — Cisco"]
+                    , certs: ["TryHackMe Pre Security", "Cybersecurity Essentials — Cisco", "Cyber Security 101"]
                 },
                 {
                     name: "Security Fundamentals",
                     skills: ["CIA Triad", "Cryptography Concepts", "Active Directory Basics", "Offensive Security Intro", "Defensive Security Intro", "TryHackMe Pre Security"],
-                    certs: ["TryHackMe Pre Security", "Cybersecurity Essentials — Cisco"]
+                    certs: ["TryHackMe Pre Security", "Cybersecurity Essentials — Cisco", "Cyber Security 101"]
                 },
                 {
                     name: "Attack Simulation & Tools",
                     skills: ["Kali Linux", "Hydra", "VirtualBox", "WSL", "Brute Force Simulation", "Home Lab Setup", "SSH Attack Vectors"],
-                    certs: ["TryHackMe Pre Security", "Cybersecurity Essentials — Cisco"]
+                    certs: ["TryHackMe Pre Security", "Cybersecurity Essentials — Cisco", "Cyber Security 101"]
                 }
             ]
         }
@@ -161,6 +161,14 @@ const allData = {
         }
     ],
     certs: [
+        {
+            id: "Cyber Security 101",
+            org: "TryHackMe",
+            date: "Jun 2026",
+            credentialId: "THM-ZN16XZVOQZ",
+            link: "https://drive.google.com/file/d/1qQ_Np7NH_UVmJCVPtTCtvJ15btY2IzS6/view?usp=sharing",
+            color: "#ff9f0a"
+        },
         {
             id: "TryHackMe Pre Security",
             org: "TryHackMe",
